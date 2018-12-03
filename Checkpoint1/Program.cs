@@ -6,8 +6,10 @@ namespace Checkpoint1
     {
         static void Main(string[] args)
         {
+
             //TrainglesLevel1();
-            TrianglesPointingLevel2();
+            TrianglesPointingLevel2();//TODO: Lägg hela programmet (TriangelsPointingLevel2() anropet) i en loop, då behöver man inte starta programmet på nytt utan kan skriva in nya kommandon när programmet skrivit ut trianglarna
+
         }
 
 
@@ -77,7 +79,7 @@ namespace Checkpoint1
                     {
                         int counterA = number - i;
 
-                        while (counterA < number)
+                        while (counterA < number) //TODO: Här kan det vara tydligare med en forloop, du använder dig ändå av en räknare (counterA) som du skapar vid sidan av. 
                         {
                             Console.Write("*");
                             counterA++;
@@ -98,7 +100,7 @@ namespace Checkpoint1
                     {
                         int counterB = i + 1;
 
-                        while (counterB < number)
+                        while (counterB < number)//TODO: Här kan det vara tydligare med en forloop, du använder dig ändå av en räknare (counterB) som du skapar vid sidan av. 
                         {
                             Console.Write("*");
                             counterB++;
