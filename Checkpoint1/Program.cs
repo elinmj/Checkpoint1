@@ -32,7 +32,7 @@ namespace Checkpoint1
                         Console.Write("*");
                         counter++;
                     }
-                   
+
                     Console.WriteLine("*");
                 }
 
@@ -43,20 +43,32 @@ namespace Checkpoint1
 
         private static void TrianglesPointingLevel2()
         {
-            Console.Write("Write command: ");
-            string numberList = Console.ReadLine();
-            string[] sepNumbers = numberList.Split('-');
+            string numberlist = GetUserInput(); //Lagt koden som hämtar input i en egen metod "GetUserInput"
+
+            string[] sepNumbers = numberlist.Split('-',StringSplitOptions.RemoveEmptyEntries); //Lagt till en stringsplitoption som parameter till "Split" funktionen så den inte lägger in tomma rader i listan om användaren inte skriver något mellan två bindestreck
 
             Console.WriteLine();
 
+            skrivUtTrianglar(sepNumbers); // Lagt koden som skriver ut en triangel i en egen metod "SkrivUtTrianglar"
+
+        }
+
+        private static string GetUserInput() //metod som hämtar input i form av en string från användaren och returnerar en string
+        {
+            Console.Write("Write command: ");
+            string userInput = Console.ReadLine();
+            return "LOL";
+        }
+
+        private static void skrivUtTrianglar(string[] sepNumbers) //metod som skriver ut trianglar enligt en string array med kommandon
+        {
             int y = 0;
 
             foreach (var item in sepNumbers)
             {
-
+                
                 if (sepNumbers[y].Contains("A"))
                 {
-
                     string numbers = item.Replace("A", "");
 
                     int number = int.Parse(numbers);
@@ -76,7 +88,7 @@ namespace Checkpoint1
 
                 }
 
-                else if(sepNumbers[y].Contains("B"))
+                else if (sepNumbers[y].Contains("B"))
                 {
                     string numbers = item.Replace("B", "");
 
@@ -98,7 +110,7 @@ namespace Checkpoint1
                 }
 
                 y++;
-                
+
             }
         }
     }
